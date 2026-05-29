@@ -1,0 +1,13 @@
+# Build artifacts
+cebare
+*.o
+*.out
+
+# Private materials
+INS_AND_OUTS_GUIDE.md
+LEARNING_GUIDE.md
+
+# Old versions
+mini-ai-auditor*
+metalforge*
+Makefile.bak
