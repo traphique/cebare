@@ -1,7 +1,9 @@
 # Cebare
 
-**Bare-metal AI optimization & reverse engineering toolkit**  
+**Bare-metal AI optimization & reverse engineering toolkit** (v0.0.1)  
 Written in C and x86_64 assembly. Built to demonstrate elite-level systems mastery.
+
+> **Early Development Release (v0.0.1)** — This is a personal portfolio project in active development. Not intended for production use or public distribution yet. Use at your own risk for learning and experimentation only.
 
 ## What is Cebare?
 
@@ -52,6 +54,33 @@ make
 - Live disassembly highlighting `vfmadd132pd`, `vbroadcastsd zmm*`, etc.
 - Clear demonstration of timing side-channels
 - Working 2-layer neural network forward pass
+
+### Mock Example Output (v0.0.1)
+
+```bash
+$ ./cebare --size 8 --iters 50000 --benchmark --audit --nn-demo
+=== Cebare v0.0.1 - Bare-metal AI Optimizer & Auditor ===
+Matrix size: 8×8 | Iterations: 50000
+
+=== PERFORMANCE BENCHMARK ===
+Naive C:     mean 45230 ns  (std 1240, min 43100, max 48900)
+AVX-512 Opt: mean 4120 ns   (std 180,  min 3890,  max 4510)
+>>> SPEEDUP: 10.98x
+Correctness: PASS
+
+=== DEFENSIVE CYBER: Timing Side-Channel Audit ===
+Short path (bit=0) avg: 1240 cycles
+Long  path (bit=1) avg: 9870 cycles
+>>> TIMING DIFFERENCE DETECTED: 8630 cycles (8.0x slower)
+
+=== TINY NEURAL NET FORWARD PASS DEMO ===
+2-layer forward pass completed in 87.40 µs
+Output[0][0] = 12.847291
+
+=== Cebare v0.0.1 Complete ===
+This is an early development release (v0.0.1).
+Not intended for production or public use yet.
+```
 
 ## Build Requirements
 
