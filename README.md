@@ -44,7 +44,8 @@ These are exactly the rare, high-leverage skills that power frontier AI systems 
 ## Quick Start
 
 ```bash
-make
+make           # build ./cebare
+make test      # build and run the correctness/unit test suite
 ./cebare --help
 ./cebare --size 16 --iters 100000 --benchmark --audit --nn-demo --disasm
 ```
@@ -103,9 +104,23 @@ Works on any CPU with AVX2 or better.
 
 ```
 cebare/
-├── cebare.c          # Complete single-file implementation
-├── Makefile          # Professional build system
-└── README.md         # This file
+├── include/cebare/        # Public module interfaces (headers)
+│   ├── colors.h           #   ANSI colors + version
+│   ├── matrix.h           #   GEMM kernels (naive + AVX-512)
+│   ├── bench.h            #   timing primitives + statistics
+│   ├── audit.h            #   timing side-channel audit
+│   ├── nn.h               #   neural-net forward pass
+│   ├── disasm.h           #   self-disassembly
+│   └── asm_demo.h         #   inline-assembly example
+├── src/                   # Implementation (one translation unit per module)
+│   ├── matrix.c  bench.c  audit.c
+│   ├── nn.c      disasm.c asm_demo.c
+│   └── main.c             #   thin CLI / orchestration layer
+├── tests/                 # Test suite (run with `make test`)
+│   ├── test_matrix.c      #   optimized vs naive GEMM correctness
+│   └── test_stats.c       #   statistics unit tests
+├── Makefile               # Multi-TU build with auto dependencies + `make test`
+└── README.md              # This file
 ```
 
 ## Future Directions

@@ -1,6 +1,8 @@
 # Build artifacts
 cebare
+build/
 *.o
+*.d
 *.out
 
 # Private materials
