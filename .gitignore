@@ -5,6 +5,12 @@ build/
 *.d
 *.out
 
+# Web app
+web/node_modules/
+web/.next/
+web/.vercel/
+web/out/
+
 # Private materials
 INS_AND_OUTS_GUIDE.md
 LEARNING_GUIDE.md

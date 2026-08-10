@@ -41,6 +41,11 @@ These are exactly the rare, high-leverage skills that power frontier AI systems 
 - Colorful, informative terminal output
 - Zero external dependencies
 
+## Website
+
+Live site with multi-theme UI: **[cebare.traphic.dev](https://cebare.traphic.dev)**  
+Web app source: [`web/`](web/) (Next.js on Vercel).
+
 ## Quick Start
 
 ```bash
@@ -119,6 +124,7 @@ cebare/
 ├── tests/                 # Test suite (run with `make test`)
 │   ├── test_matrix.c      #   optimized vs naive GEMM correctness
 │   └── test_stats.c       #   statistics unit tests
+├── web/                   # Marketing site (Next.js → cebare.traphic.dev)
 ├── Makefile               # Multi-TU build with auto dependencies + `make test`
 └── README.md              # This file
 ```
